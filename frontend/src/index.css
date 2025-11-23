@@ -1,0 +1,171 @@
+/* Modern Blue-Themed UI - Global styles */
+
+:root{
+  --bg: #f4f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2b8bf9; /* main blue */
+  --accent-dark: #1666d6;
+  --danger: #dc3545;
+  --shadow: 0 6px 18px rgba(41, 82, 153, 0.08);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #0f1724;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* layout container: centers everything horizontally */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* page wrapper centers content and aligns text */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* navbar */
+.navbar {
+  background: #212529;
+  color: white;
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.navbar .nav-left{display:flex; gap:18px; align-items:center}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.navbar a:hover{
+  background: rgba(255,255,255,0.04);
+}
+.navbar .logout {
+  margin-left: auto;
+  background: var(--danger);
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* cards */
+.card {
+  width: 100%;
+  background: var(--card);
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+/* dashboard metric card variants */
+.metrics {
+  display:flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 8px;
+}
+.metric {
+  flex: 1;
+  background: var(--card);
+  padding: 30px 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align:center;
+}
+.metric h3{margin:0; font-size:14px; color:var(--muted)}
+.metric .num{font-size:34px; font-weight:700; margin-top:10px; color:var(--accent-dark)}
+
+/* forms and inputs */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 15px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #0f1724;
+}
+label { display:block; font-size:14px; margin-bottom:6px; color:#0f1724; }
+
+/* buttons */
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn.secondary {
+  background: #7aa9ff;
+  color: white;
+}
+.btn.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* forms layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.form-single { width: 380px; margin: 0 auto; text-align: left; }
+
+/* lists and tables */
+ul { padding-left: 18px; margin: 0; }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  text-align:left;
+  padding: 12px;
+  background: #f1f5f9;
+  font-weight: 600;
+}
+.table td {
+  border-top: 1px solid #e6eefb;
+  padding: 12px;
+  vertical-align: top;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* small screens */
+@media (max-width: 820px) {
+  .metrics { flex-direction: column; }
+  .form-grid { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+  .form-single { width: 100%; }
+  .navbar { padding: 10px; gap: 10px; flex-wrap:wrap; }
+}
